@@ -31,3 +31,6 @@ input, select, textarea { padding: .5rem; border: 1px solid #d1d5db; border-radi
   .navbar, .no-print, .flash { display: none; }
   body { background: #fff; }
 }
+.tabs { display: flex; gap: 1rem; }
+.tabs a { text-decoration: none; color: #2563eb; font-weight: 600; }
+h2 { margin-top: 2rem; }
