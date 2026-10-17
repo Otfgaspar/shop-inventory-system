@@ -24,3 +24,10 @@ input, select, textarea { padding: .5rem; border: 1px solid #d1d5db; border-radi
 .form label { display: block; margin: .8rem 0 .2rem; font-weight: 600; }
 .form input, .form select { width: 100%; }
 .low { color: #b91c1c; font-weight: bold; }
+.qty { width: 80px; }
+.total-bar { display: flex; gap: 1rem; align-items: center; justify-content: flex-end; margin-top: 1rem; }
+.receipt { max-width: 560px; background: #fff; padding: 1.5rem; border-radius: 8px; }
+@media print {
+  .navbar, .no-print, .flash { display: none; }
+  body { background: #fff; }
+}
