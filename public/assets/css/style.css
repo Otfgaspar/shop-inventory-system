@@ -16,3 +16,11 @@ table { width: 100%; border-collapse: collapse; background: #fff; }
 th, td { padding: .6rem .8rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
 th { background: #f9fafb; }
 .btn { display: inline-block; padding: .5rem 1rem; background: #2563eb; color: #fff; border: 0; border-radius: 6px; cursor: pointer; text-decoration: none; }
+.flash { background: #dcfce7; padding: .7rem 1rem; border-radius: 6px; }
+.errors { background: #fee2e2; padding: .7rem 1rem; border-radius: 6px; }
+.toolbar { display: flex; gap: .5rem; margin: 1rem 0; }
+input, select, textarea { padding: .5rem; border: 1px solid #d1d5db; border-radius: 6px; }
+.form { max-width: 480px; }
+.form label { display: block; margin: .8rem 0 .2rem; font-weight: 600; }
+.form input, .form select { width: 100%; }
+.low { color: #b91c1c; font-weight: bold; }

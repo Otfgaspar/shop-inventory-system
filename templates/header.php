@@ -28,3 +28,4 @@ $pageTitle = $pageTitle ?? 'Shop Inventory';
   </div>
 </nav>
 <main class="container">
+    <?php if ($msg = flash()): ?><p class="flash"><?= e($msg) ?></p><?php endif; ?>

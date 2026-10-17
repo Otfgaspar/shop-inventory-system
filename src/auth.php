@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/helpers.php';
 
 function attempt_login(string $username, string $password): bool
 {
@@ -21,7 +22,7 @@ function attempt_login(string $username, string $password): bool
 function require_login(): void
 {
     if (empty($_SESSION['user_id'])) {
-        header('Location: login.php');
+       header('Location: ' . BASE_URL . '/login.php');
         exit;
     }
 }
