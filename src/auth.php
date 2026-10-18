@@ -22,9 +22,22 @@ function attempt_login(string $username, string $password): bool
 function require_login(): void
 {
     if (empty($_SESSION['user_id'])) {
-       header('Location: ' . BASE_URL . '/login.php');
+        header('Location: ' . BASE_URL . '/login.php');
         exit;
     }
+
+    // Re-check the account on every request, so a deactivated user
+    // is kicked out straight away and role changes take effect.
+    $stmt = db()->prepare("SELECT role, is_active FROM users WHERE id = ?");
+    $stmt->execute([$_SESSION['user_id']]);
+    $u = $stmt->fetch();
+
+    if (!$u || !$u['is_active']) {
+        session_destroy();
+        header('Location: ' . BASE_URL . '/login.php');
+        exit;
+    }
+    $_SESSION['role'] = $u['role'];
 }
 
 function require_role(string $role): void
